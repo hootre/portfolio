@@ -1,0 +1,771 @@
+.about {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  /* card-content border */
+  /* .profile-box{
+    height: 80%;
+    margin: 30px auto;
+    border: 8px solid #8d8d8d;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    position: relative;
+    left: -110px;
+    padding: 25px;
+    transition: all 1s;
+    text-align-last: left;
+  }
+  .profile-box > p{
+    display: inline-block;
+    height: 100%;
+    overflow: hidden;
+    padding-left: 50px;
+  }
+  .profile-box:hover{
+    border-right-color: #4528c7;
+    border-bottom-color: #4528c7;
+  }
+  .profile-box:hover:after{
+    border-top-color: #4528c7;
+    border-right-color: #4528c7;
+  }
+  .profile-box:after{
+    content: '';
+    position: absolute;
+    border: 8px solid #8d8d8d;
+    border-bottom-color : transparent;
+    border-left-color: transparent;
+    top: -10px;
+    left: 240px;
+    right: -8px;
+    transition: all 1s;
+  }
+  .profile-box:before{
+    position: absolute;
+    content: 'About me';
+    left: 70px;
+    top: -23px;
+    font-family: CJ_title_Bold;
+    font-size: 30px;
+    font-weight: bold;
+    color: #020001;
+  } */
+  /* card-content border end*/
+
+
+  /* card-container start */
+  .card-container{
+    position: relative;
+    width: 88%;
+    height: 80%;
+    top: 10%;
+    margin: 0 auto;
+    border-radius: 50px;
+    background-color: rgba(239, 239, 239, 0);
+    animation: back_card_open 1.6s 3.4s ease forwards;
+  }
+  .card-container .card-content{  
+    position: absolute;
+    right: 2%;
+    top: 10%;
+    width: 74%;
+    height: 80%;
+    opacity: 0;
+    display: grid;
+    grid-template-columns: 400px 300px 300px;
+    grid-gap: 20px;
+    grid-auto-rows: minmax(100px, auto);
+    animation: card-content-opne 1.6s 5s ease forwards;
+  }
+  .card-content > div{
+  }
+  .card-content .profile-0 { 
+    grid-column: 1 / 1;
+    grid-row: 1 / 4;
+  }
+  .card-content .profile-1 { 
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+  }
+  .card-content .profile-2 {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+  }
+  .card-content .profile-3 {
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+  }
+  /* about card graph start */
+  .card-content:hover > div {
+    transition-duration: 0.5s;
+  }
+  .card-content:hover > div:hover h3 i {
+    transform: scale(1.25);
+  }
+  .card-content:hover > div:not(:hover) {
+    opacity: 0.5;
+  }
+  .card-content .graph{
+    border: 1px #eee solid;
+    height: 100%;
+    border-radius: 15px;
+    box-shadow: 8px 8px 12px #32323255;
+    transition-property:box-shadow;
+    transition-duration: 500ms;
+    
+  }
+  .card-content .graph:hover{
+    border: 1px #eee solid;
+    border-radius: 15px;
+    box-shadow: 8px 8px 26px #32323255;
+  }
+  .card-content .graph h3 {
+    transition-duration: 0.3s;
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-align: left;
+    font-weight: bold;
+    color: #2c2c2c;
+  }
+  .card-content .graph h3 i {
+    color: #707070;
+    background: #9e9e9e;
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+    line-height: 42px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    margin-right: 8px;
+    transition-duration: 0.3s;
+    margin-right: 20px;
+  }
+  .card-content .graph small {
+    display: block;
+    opacity: 0.7;
+  }
+  .card-content .graph ul{
+    text-align: left;
+  }
+  .card-content .graph ul li{
+    position: relative;
+    margin-left: 15px;
+    padding-left: 25px;
+    padding-bottom: 15px;
+  }
+  .card-content .graph ul li:hover::before{
+    animation: circle 1.2s infinite;
+  }
+  @keyframes circle {
+    from {
+      box-shadow: 0 0 0 0px #4528c7;
+    }
+    to {
+      box-shadow: 0 0 0 6px rgba(255, 255, 255, 0);
+    }
+  }
+  .card-content .graph ul li:hover span{
+    color: #4528c7;
+  }
+  .card-content .graph ul li:first-of-type::before{
+    width: 14px;
+    height: 14px;
+    left: 1px;
+  }
+  .card-content .graph ul li:last-of-type{
+    padding-bottom: 3px;
+  }
+  .card-content .graph ul li:last-of-type::after{
+    border-radius: 1.5px;
+  }
+  .card-content .graph ul li::before,
+  .card-content .graph ul li::after{
+    content: '';
+    display: block;
+    position: absolute;
+  }
+  .card-content .graph ul li::before{
+    width: 10px;
+    height: 10px;
+    border: 3px solid #fff;
+    background: #4528c7;
+    border-radius: 50%;
+    left: 3px;
+    z-index: 1;
+  }
+  .card-content .graph ul li::after{
+    width: 3px;
+  height: 100%;
+  background: #fff;
+  left: 5px;
+  top: 0;
+  }
+  .card-content .graph ul li span{
+    transition-duration: 0.3s;
+  }
+  .card-content .work {
+    padding: 15px;
+    margin: 0 4% 15px 0;
+  }
+  .card-content .edu {
+    padding: 15px;
+  }
+
+
+/* interests */
+  .card-content .graph .interests-items {
+    box-sizing: border-box;
+    padding: 0 0 15px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  .card-content .graph .interests-items div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    padding-top: 50px;
+  }
+  .card-content .graph .interests-items div:hover i {
+    transform: scale(1.2);
+  }
+  .card-content .graph .interests-items div:hover span {
+    color: #4528c7;
+    transition-duration: 0.3s;
+  }
+  .card-content .graph .interests-items div i {
+    font-size: 45px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    color: #9e9e9e;
+    transition-duration: 0.3s;
+  }
+  .card-content .graph .interests-items div span {
+    display: block;
+  }
+
+
+  /* about me */
+  .card-content .about{
+    padding: 100px 70px;
+  }
+  .card-content .about h2{
+    font-weight: bold;
+    color: #2c2c2c;
+    text-align: left;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .card-content .about p{
+    text-align: left;
+    font-size: 12px;
+  }
+/*  card-container end */
+
+
+  .about_box {
+    background-color: #8d8d8d;
+    background-size: 100% auto;
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 33;
+    font: normal 14px/1.618em "Hind", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  .about_box:before {
+    content: "";
+    height: 0px;
+    padding: 0px;
+    border: 110em solid #313440;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    display: block;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-animation: puff_portrait 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
+    animation: puff_portrait 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
+  }
+  
+  .about h1,
+  .about h2 {
+    font-weight: 400;
+    margin: 0px 0px 5px 0px;
+  }
+  
+  .about h1 {
+    font-size: 24px;
+  }
+  
+  .about h2 {
+    font-size: 16px;
+  }
+  
+  .about p {
+    margin: 0px;
+  }
+  
+
+  /* profile side Card */
+  .profile-card {
+    background: #FFB300;
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    overflow: hidden;
+    opacity: 0;
+    margin-top: 70px;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+    -webkit-animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia_landscape 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards, leftCard 1s 3.4s ease forwards;
+    animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia_landscape 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards, leftCard 1s 3.4s ease forwards;
+  }
+  
+  .profile-card #profile-img{
+    border-radius: 50%;
+    width: 250px;
+    margin: 0 auto;
+    overflow: hidden;
+    height: 250px;
+    position: absolute;
+    left: 45px;
+    top: 15%;
+    opacity: 0;
+    box-shadow: 8px 8px 12px #32323255;
+    transition-property:box-shadow;
+    transition-duration: 500ms;
+    animation: moveIn 1s 3.1s ease forwards;
+  }
+
+  .profile-card #profile-img img{
+    position: absolute;
+    top: -20px;
+    left: -10px;
+  }
+  .profile-sns{
+    position: absolute;
+    top: 55%;
+    width: 100%;
+    opacity: 0;
+    animation: moveIn 1s 3.1s ease forwards;
+  }
+  .profile-sns > li{
+    width: 100%;
+    text-align: left;
+    position: relative;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  .profile-sns > li:hover i,
+  .profile-sns > li:hover p{
+    color: #707070;
+  }
+  .profile-sns > li:hover > p:after{
+    width: 100%;
+  }
+  .profile-sns > li > p{
+    display: inline-block;
+    position: relative;
+    left: 35%;
+    color: #efefef;
+    text-align: left;
+    font-size: 17px;
+  }
+  .profile-sns > li > p:after{
+    content: "";
+    position: absolute;
+    background: #4528c7;
+    height: 1px;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    transition-duration: 0.3s;
+  }
+  .profile-sns i{
+    width: 40px;
+    height: 30px;
+    position: absolute;
+    left: 70px;
+    top: -3px;
+    font-size: 25px;
+    color: #9e9e9e;
+
+  }
+  
+  @media screen and (min-aspect-ratio: 4/3) {
+    body {
+      background-size: 100% auto;
+    }
+    body:before {
+      width: 0px;
+    }
+    @-webkit-keyframes puff {
+      0% {
+        top: 100%;
+        width: 0px;
+        padding-bottom: 0px;
+      }
+      100% {
+        top: 50%;
+        width: 100%;
+        padding-bottom: 100%;
+      }
+    }
+    @keyframes puff {
+      0% {
+        top: 100%;
+        width: 0px;
+        padding-bottom: 0px;
+      }
+      100% {
+        top: 50%;
+        width: 100%;
+        padding-bottom: 100%;
+      }
+    }
+  }
+  
+  @media screen and (min-height: 480px) {
+    .profile-card {
+      -webkit-animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia_portrait 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards, leftCard 1s 3.4s ease forwards;
+      animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia_portrait 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards, leftCard 1s 3.4s ease forwards;
+    }
+  }
+  
+  @media screen and (min-aspect-ratio: 4/3) {
+    body {
+      background-size: 100% auto;
+    }
+    body:before {
+      width: 0px;
+      -webkit-animation: puff_landscape 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
+      animation: puff_landscape 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
+    }
+  }
+  
+  @-webkit-keyframes init {
+    0% {
+      width: 0px;
+      height: 0px;
+    }
+    100% {
+      width: 56px;
+      height: 56px;
+      margin-top: 0px;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes init {
+    0% {
+      width: 0px;
+      height: 0px;
+    }
+    100% {
+      width: 56px;
+      height: 56px;
+      margin-top: 0px;
+      opacity: 1;
+    }
+  }
+  
+  @-webkit-keyframes puff_portrait {
+    0% {
+      top: 100%;
+      height: 0px;
+      padding: 0px;
+    }
+    100% {
+      top: 50%;
+      height: 100%;
+      padding: 0px 100%;
+    }
+  }
+  
+  @keyframes puff_portrait {
+    0% {
+      top: 100%;
+      height: 0px;
+      padding: 0px;
+    }
+    100% {
+      top: 50%;
+      height: 100%;
+      padding: 1000px 1000px;
+    }
+  }
+  
+  @-webkit-keyframes puff_landscape {
+    0% {
+      top: 100%;
+      width: 0px;
+      padding-bottom: 0px;
+    }
+    100% {
+      top: 50%;
+      width: 100%;
+      padding-bottom: 100%;
+    }
+  }
+  
+  @keyframes puff_landscape {
+    0% {
+      top: 100%;
+      width: 0px;
+      padding-bottom: 0px;
+    }
+    100% {
+      top: 50%;
+      width: 100%;
+      padding-bottom: 100%;
+    }
+  }
+  
+  @-webkit-keyframes borderRadius {
+    0% {
+      -webkit-border-radius: 50%;
+    }
+    100% {
+      -webkit-border-radius: 0px;
+    }
+  }
+  
+  @keyframes borderRadius {
+    0% {
+      -webkit-border-radius: 50%;
+    }
+    100% {
+      border-radius: 0px;
+    }
+  }
+  
+  @-webkit-keyframes moveDown {
+    0% {
+      top: 50%;
+    }
+    50% {
+      top: 40%;
+    }
+    100% {
+      top: 100%;
+    }
+  }
+  
+  @keyframes moveDown {
+    0% {
+      top: 50%;
+    }
+    50% {
+      top: 40%;
+    }
+    100% {
+      top: 100%;
+    }
+  }
+  
+  @-webkit-keyframes moveUp {
+    0% {
+      background: #FFB300;
+      top: 100%;
+    }
+    50% {
+      top: 40%;
+    }
+    100% {
+      top: 50%;
+      background: #E0E0E0;
+    }
+  }
+  
+  @keyframes moveUp {
+    0% {
+      background: #FFB300;
+      top: 100%;
+    }
+    50% {
+      top: 40%;
+    }
+    100% {
+      top: 50%;
+      background: #E0E0E0;
+    }
+  }
+  
+  @-webkit-keyframes materia_landscape {
+    0% {
+      background: #E0E0E0;
+    }
+    50% {
+      -webkit-border-radius: 4px;
+    }
+    100% {
+      width: 440px;
+      height: 280px;
+      background: #FFFFFF;
+      -webkit-border-radius: 4px;
+    }
+  }
+  
+  @keyframes materia_landscape {
+    0% {
+      background: #E0E0E0;
+    }
+    50% {
+      border-radius: 4px;
+    }
+    100% {
+      width: 440px;
+      height: 280px;
+      background: #FFFFFF;
+      border-radius: 4px;
+    }
+  }
+  
+  @-webkit-keyframes materia_portrait {
+    0% {
+      background: #E0E0E0;
+    }
+    50% {
+      -webkit-border-radius: 4px;
+    }
+    100% {
+      width: 340px;
+      height: 100%;
+      background: #bdbdbd;
+      border-radius: 50px;
+    }
+  }
+  
+  @keyframes materia_portrait {
+    0% {
+      background: #E0E0E0;
+    }
+    50% {
+      border-radius: 4px;
+    }
+    100% {
+      width: 340px;
+      height: 100%;
+      background: #bdbdbd;
+      border-radius: 50px;
+    }
+  }
+  
+  @-webkit-keyframes moveIn {
+    0% {
+      margin-top: 50px;
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      margin-top: -20px;
+    }
+  }
+  
+  @keyframes moveIn {
+    0% {
+      margin-top: 50px;
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      margin-top: -20px;
+    }
+  }
+  
+  @-webkit-keyframes scaleIn {
+    0% {
+      -webkit-transform: scale(0);
+    }
+    100% {
+      -webkit-transform: scale(1);
+    }
+  }
+  
+  @keyframes scaleIn {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @-webkit-keyframes ripple {
+    0% {
+      transform: scale3d(0, 0, 0);
+    }
+    50%,
+    100% {
+      -webkit-transform: scale3d(1, 1, 1);
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes ripple {
+    0% {
+      transform: scale3d(0, 0, 0);
+    }
+    50%,
+    100% {
+      transform: scale3d(1, 1, 1);
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes leftCard{
+    0%{
+      left: 50%;
+      border-radius: 50px;
+    }
+    100%{
+      left: 10%;
+      border-radius: 50px 0 0 50px;
+    }
+  }
+
+  @keyframes back_card_open{
+    0%{
+      width: 0%;
+    }
+    100%{
+      width: 74%;
+      background-color: rgba(239, 239, 239, 1);
+    }
+  }
+  @keyframes card-content-opne{
+    0% {
+      margin-top: 50px;
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      margin-top: 0px;
+    }
+  }
+
+  
